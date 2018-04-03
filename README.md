@@ -1,7 +1,16 @@
 :mount_fuji:
-# Virtual Everest Climb!
+# Virtual Everest-Climb!
 
 > For when you've got a team of people climbing ladders - and you really need to pretend like they're going up Everest.
+
+## Building
+
+``` bash
+
+$ cd /lib
+$ browserify main.js -o ./../web/scripts/bundle.js
+
+```
 
 # <a name="license"></a>License (GPLv3)
 

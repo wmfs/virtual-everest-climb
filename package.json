@@ -3,7 +3,13 @@
   "description": "For when you've got a team of people climbing ladders - and you really need to pretend like they're going up Everest.",
   "version": "0.0.1",
   "author": "Tim Needham",
+  "devDependencies": {
+    "chai": "4.1.2",
+    "mocha": "5.0.5",
+    "standard": "11.0.1"
+  },
   "scripts": {
+    "test": "standard && mocha"
   },
   "license": "GPLv3",
   "repository": {

@@ -85,10 +85,7 @@ package-deps.json
 .yo-rc.json
 
 package-lock.json
-lerna-debug.log
 
-TEST-result.xml
 .gradle/
 .embedpostgresql/
 build/
-lerna-debug.log

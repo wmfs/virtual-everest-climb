@@ -1,0 +1,16 @@
+{
+  "name": "virtual-everest-climb",
+  "description": "For when you've got a team of people climbing ladders - and you really need to pretend like they're going up Everest.",
+  "version": "0.0.1",
+  "author": "Tim Needham",
+  "scripts": {
+  },
+  "license": "GPLv3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wmfs/virtual-everest-climb"
+  },
+  "bugs": {
+    "url": "https://github.com/wmfs/virtual-everest-climb/issues"
+  }
+}

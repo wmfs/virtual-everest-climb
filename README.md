@@ -1,6 +1,6 @@
 # Virtual Everest Climb!
 
-> :mount_fuji: For when you've got a team of people climbing ladders - and you really need to pretend like they're going up Everest.
+> For when you've got a team of people climbing ladders - and you really need to pretend like they're going up Everest. :mount_fuji:
 
 # <a name="license"></a>License (GPLv3)
 

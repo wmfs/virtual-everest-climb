@@ -83,7 +83,7 @@ output/
 package-deps.json
 
 .yo-rc.json
-.idea
+
 package-lock.json
 lerna-debug.log
 

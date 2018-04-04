@@ -1,0 +1,72 @@
+
+.noSelect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.gap {
+    clear: both;
+    padding: 1em;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+
+p, h2, h3 {
+    padding: 0;
+    margin: 0;
+}
+
+#everest {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background-color: dodgerblue;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /*cursor: none;*/
+}
+
+#altitude {
+    height: 10%;
+    float: right;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    background-color: white
+}
+
+#summit {
+    height: 5%;
+    float: right;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    background-color: white
+}
+
+#milestone {
+    height: 10%;
+    float: right;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    background-color: white
+}
+
+#timer {
+    height: 7%;
+    float: right;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    background-color: white
+}
+

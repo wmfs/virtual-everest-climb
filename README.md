@@ -3,6 +3,8 @@
 
 > For when you've got a team of people climbing ladders - and you really need to pretend like they're going up Everest.
 
+### Current build is available [here](https://wmfs.github.io/virtual-everest-climb/) !
+
 ## Building
 
 ``` bash

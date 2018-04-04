@@ -13,38 +13,67 @@
     padding: 1em;
 }
 
-html, body {
+html {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    padding: 15px;
+    margin: -40px 0 -40px 0;
+    font-family: 'Baloo Thambi', cursive;
+    font-size: 500%;
+}
+
+h2 {
+    padding: 0;
+    margin: 0;
+    font-family: 'Baloo Thambi', cursive;
+}
+
+p {
+    padding: 0 20px 0 20px;
+    margin: 0;
+    font-family: 'Jaldi', sans-serif;
+    font-size: 200%;
+}
+
+body {
+    background: #2BC0E4; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #EAECC6, #2BC0E4); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding: 0;
     margin: 0;
     height: 100vh;
 }
 
-p, h2, h3 {
-    padding: 0;
-    margin: 0;
+#logo {
+    float: left;
+    margin: 15px;
+    width: 220px;
+    height: 92px;
+    background-repeat: no-repeat;
+    background-image: url(images/logo-inverse.png);
 }
 
 #everest {
     padding: 0;
     margin: 0;
     height: 100vh;
-    background-color: dodgerblue;
     background-repeat: no-repeat;
     background-size: contain;
     /*cursor: none;*/
 }
 
 #altitude {
-    height: 10%;
     float: right;
     display: inline-block;
     padding: 0;
-    margin: 0;
+    margin: 15px 0px 0px 0px;
     background-color: white
 }
 
 #summit {
-    height: 5%;
     float: right;
     display: inline-block;
     padding: 0;
@@ -53,7 +82,6 @@ p, h2, h3 {
 }
 
 #milestone {
-    height: 10%;
     float: right;
     display: inline-block;
     padding: 0;
@@ -62,7 +90,6 @@ p, h2, h3 {
 }
 
 #timer {
-    height: 7%;
     float: right;
     display: inline-block;
     padding: 0;

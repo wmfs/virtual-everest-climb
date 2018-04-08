@@ -24,7 +24,7 @@ export function parseText (info) {
 
 export function parseImages (info) {
   return {
-    backdrop: '\'/static/backdrops/backdrop-001.png\'',
+    backdrop: '\'./static/backdrops/backdrop-001.png\'',
     milestoneImage: ''
   }
 }

@@ -1,6 +1,6 @@
 const facts = require('./facts').facts
 
-module.exports = class VirtualEverestClimb {
+export class VirtualEverestClimb {
   constructor (providedOptions) {
     const _this = this
     const options = providedOptions || {}
@@ -27,6 +27,16 @@ module.exports = class VirtualEverestClimb {
     }
   }
 
+  parseDuration () {
+    if (this.ladderCount === 0) {
+      return {
+        hours: '00',
+        minutes: '00',
+        seconds: '00'
+      }
+    }
+  }
+
   getCurrentAltitudeInfo () {
     const percentageComplete = (this.currentAltitude / this.targetAltitude) * 100
 
@@ -38,7 +48,7 @@ module.exports = class VirtualEverestClimb {
     }
     const reachedFact = facts[reachedIndex]
     const nextMilestone = facts[reachedIndex + 1]
-    const distanceToNextMilestone = nextMilestone.altitudeInMetres - reachedFact.altitudeInMetres
+    const distanceToNextMilestone = nextMilestone.altitudeInMetres - this.currentAltitude
     const laddersToNextMilestone = Math.ceil((distanceToNextMilestone / this.ladderHeight))
 
     return {

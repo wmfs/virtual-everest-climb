@@ -1,19 +1,21 @@
-:mount_fuji:
-# Virtual Everest-Climb!
+# virtual-everest-climb
 
 > For when you've got a team of people climbing ladders - and you really need to pretend like they're going up Everest.
 
-### Current build is available [here](https://wmfs.github.io/virtual-everest-climb/) !
-
-## Building
+## Build Setup
 
 ``` bash
+# install dependencies
+npm install
 
-$ cd /lib
-$ browserify main.js -o ./../web/scripts/bundle.js
+# serve with hot reload at localhost:8080
+npm run dev
 
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
 ```
 
-# <a name="license"></a>License (GPLv3)
-
-Provided under [__GNU General Public License v3.0__](https://github.com/wmfs/virtual-everest-climb/blob/master/LICENSE).
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

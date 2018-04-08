@@ -8,8 +8,8 @@
     },
     {
       "altitudeInMetres": 306,
-      "title": "The shard",
-      "description": "Currently Europe's tallest building!",
+      "title": "The Shard",
+      "description": "Europe's tallest building!",
       "target": false
     },
     {
@@ -27,7 +27,7 @@
     {
       "altitudeInMetres": 828,
       "title": "Burj Khalifa (Dubai)",
-      "description": "Currently the World's tallest building!",
+      "description": "The World's tallest building!",
       "target": false
     },
     {

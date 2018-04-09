@@ -24,6 +24,7 @@ export function parseText (info) {
 
 export function parseImages (info) {
   return {
+    // https://wmfs.github.io/virtual-everest-climb/static/backdrops/backdrop-001.png
     backdrop: '\'./static/backdrops/backdrop-001.png\'',
     milestoneImage: ''
   }

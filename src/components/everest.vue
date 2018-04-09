@@ -18,15 +18,23 @@
     <div class="gap"></div>
 
     <div id="milestone">
-      <p>{{text.laddersUntilMilestoneText}}</p>
-      <h2>{{text.milestoneTitle}}</h2>
-      <p>{{text.milestoneInfo}}</p>
+      <img v-bind:src="images.milestoneImage" id="milestoneImage" alt="Thumbnail of current milestone">
+      <div id="milestoneInfo">
+        <p>{{text.laddersUntilMilestoneText}}</p>
+        <h2>{{text.milestoneTitle}}</h2>
+        <p>{{text.milestoneInfo}}</p>
+      </div>
     </div>
 
     <div class="gap"></div>
 
     <div id="timer">
-      <h2>{{duration.hours}} {{duration.minutes}} {{duration.seconds}}</h2>
+      <div class="duration">{{duration.seconds}}<br>
+        <p class="durationLabel">Seconds</p></div>
+      <div class="duration">{{duration.minutes}}<br>
+        <p class="durationLabel">Minutes</p></div>
+      <div class="duration">{{duration.hours}}<br>
+        <p class="durationLabel">Hours</p></div>
     </div>
 
   </div>
@@ -39,6 +47,14 @@ import { parseImages, parseText } from './info-parsers'
 export default {
   name: 'Everest',
   methods: {
+    time: function processTimeEvent () {
+      const result = this.vec.parseDuration()
+      this.duration = {
+        hours: result.hours,
+        minutes: result.minutes,
+        seconds: result.seconds
+      }
+    },
     registerLadder: function registerLadder () {
       this.vec.registerLadderAscent()
       const info = this.vec.getCurrentAltitudeInfo()
@@ -46,11 +62,20 @@ export default {
       this.images = parseImages(info)
     }
   },
+
+  mounted () {
+    this.interval = setInterval(this.time, 1000)
+  },
+
+  beforeDestroy () {
+    clearInterval(this.interval)
+  },
+
   data () {
     const vec = new VirtualEverestClimb(
       {
         numberOfLadders: 10,
-        ladderHeightInMetres: 8,
+        ladderHeightInMetres: 7.3,
         startNumberOfLadders: 0
       }
     )
@@ -94,8 +119,9 @@ export default {
 
   h2 {
     padding: 0;
-    margin: 0;
+    margin: -5px 10px -5px 10px;
     font-family: 'Baloo Thambi', cursive;
+    font-size: 300%;
   }
 
   p {
@@ -118,7 +144,7 @@ export default {
     float: right;
     display: inline-block;
     padding: 0;
-    margin: 15px 0px 0px 0px;
+    margin: 15px 0 0 0;
     background-color: white
   }
 
@@ -128,6 +154,19 @@ export default {
     padding: 0;
     margin: 0;
     background-color: white
+  }
+
+  #milestoneImage {
+    display: inline-block;
+    height: 180px;
+    width: auto;
+    background-color: indianred;
+    float: left;
+  }
+
+  #milestoneInfo {
+    display: inline-block;
+    float: left;
   }
 
   #milestone {
@@ -143,6 +182,24 @@ export default {
     display: inline-block;
     padding: 0;
     margin: 0;
-    background-color: white
+    background-color: white;
+    font-family: 'Oxygen Mono', monospace;
+    font-size: 300%;
+    height: auto;
   }
+
+  .duration {
+    padding: 0;
+    margin: 0;
+    width: 100px;
+    height: 80px;
+    float: right;
+  }
+
+  .durationLabel {
+    font-family: 'Jaldi', sans-serif;
+    font-size: 20px;
+    margin-top: -10px;
+  }
+
 </style>

@@ -1,4 +1,13 @@
 const facts = require('./facts').facts
+const SECOND_DURATIONS = {
+  year: 31536000,
+  month: 2592000,
+  week: 604800,
+  day: 86400,
+  hour: 3600,
+  minute: 60,
+  second: 1
+}
 
 export class VirtualEverestClimb {
   constructor (providedOptions) {
@@ -6,7 +15,7 @@ export class VirtualEverestClimb {
     const options = providedOptions || {}
     this.firstLadderDate = null
     this.ladders = options.numberOfLadders || 10
-    this.ladderHeight = options.ladderHeightInMetres || 8
+    this.ladderHeight = options.ladderHeightInMetres || 7.3
     this.ladderCount = options.startNumberOfLadders || 0
     this.currentAltitude = this.ladderCount * this.ladderHeight
 
@@ -28,7 +37,32 @@ export class VirtualEverestClimb {
   }
 
   parseDuration () {
-    if (this.ladderCount === 0) {
+    if (this.firstLadderDate) {
+      let delta = Math.abs(new Date() - this.firstLadderDate) / 1000
+      const result = {}
+
+      Object.keys(SECOND_DURATIONS).forEach(function (key) {
+        result[key] = Math.floor(delta / SECOND_DURATIONS[key])
+        delta -= result[key] * SECOND_DURATIONS[key]
+      })
+      let hours = result.hour.toString()
+      if (hours.length === 1) {
+        hours = '0' + hours
+      }
+      let minutes = result.minute.toString()
+      if (minutes.length === 1) {
+        minutes = '0' + minutes
+      }
+      let seconds = result.second.toString()
+      if (seconds.length === 1) {
+        seconds = '0' + seconds
+      }
+      return {
+        hours: hours,
+        minutes: minutes,
+        seconds: seconds
+      }
+    } else {
       return {
         hours: '00',
         minutes: '00',
@@ -52,6 +86,7 @@ export class VirtualEverestClimb {
     const laddersToNextMilestone = Math.ceil((distanceToNextMilestone / this.ladderHeight))
 
     return {
+      ladderHeight: this.ladderHeight,
       ladderCount: this.ladderCount,
       currentAltitude: this.currentAltitude,
       targetAltitude: this.targetAltitude,
@@ -63,6 +98,7 @@ export class VirtualEverestClimb {
         description: reachedFact.description
       },
       nextMilestone: {
+        thumbnail: nextMilestone.thumbnail,
         altitude: nextMilestone.altitudeInMetres,
         title: nextMilestone.title,
         description: nextMilestone.description

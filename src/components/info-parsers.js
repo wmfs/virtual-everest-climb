@@ -7,14 +7,16 @@ export function parseText (info) {
     }
   }
 
+  const altitudeText = `${Math.ceil(info.currentAltitude).toLocaleString()}m`
+
   let laddersUntilSummit = info.targetAltitude - info.currentAltitude
   if (laddersUntilSummit < 0) {
     laddersUntilSummit = 0
   }
-  laddersUntilSummit = Math.floor(laddersUntilSummit / 8).toLocaleString()
+  laddersUntilSummit = Math.ceil(laddersUntilSummit / info.ladderHeight).toLocaleString()
 
   return {
-    altitudeText: `${info.currentAltitude}m`,
+    altitudeText: altitudeText,
     laddersUntilSummitText: `Just ${laddersUntilSummit} more ladder${plurals(laddersUntilSummit)} to the summit!`,
     laddersUntilMilestoneText: `We've ${info.laddersToNextMilestone} ladder${plurals(info.laddersToNextMilestone)} until`,
     milestoneTitle: info.nextMilestone.title,
@@ -26,6 +28,6 @@ export function parseImages (info) {
   return {
     // https://wmfs.github.io/virtual-everest-climb/static/backdrops/backdrop-001.png
     backdrop: '\'./static/backdrops/backdrop-001.png\'',
-    milestoneImage: ''
+    milestoneImage: `static/milestones/${info.nextMilestone.thumbnail}`
   }
 }

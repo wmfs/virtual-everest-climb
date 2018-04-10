@@ -9,7 +9,11 @@ export class VirtualEverestClimb {
   constructor (providedOptions) {
     const _this = this
     const options = providedOptions || {}
-    this.firstLadderDate = null
+    if (providedOptions.firstLadderDate) {
+      this.firstLadderDate = new Date(providedOptions.firstLadderDate)
+    } else {
+      this.firstLadderDate = null
+    }
     this.ladders = options.numberOfLadders || 10
     this.ladderHeight = options.ladderHeightInMetres || 7.3
     this.ladderCount = options.startNumberOfLadders || 0

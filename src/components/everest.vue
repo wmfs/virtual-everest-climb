@@ -3,26 +3,26 @@
   <div id="logo">
   </div>
 
-  <div id="altitude" class="card">
+    <div id="milestone" class="card">
+      <img v-bind:src="images.milestoneImage" id="milestoneImage" alt="Thumbnail of current milestone">
+      <div id="milestoneInfo">
+        <p>{{text.laddersUntilMilestoneText}}</p>
+        <h2>{{text.milestoneTitle}}</h2>
+        <p>{{text.milestoneInfo}}</p>
+      </div>
+    </div>
+
+    <div class="gap"></div>
+
+    <div id="summit" class="card">
+      <p>{{text.laddersUntilSummitText}}</p>
+    </div>
+
+    <div class="gap"></div>
+
+    <div id="altitude" class="card">
     <p>Our current altitude:</p>
     <h1>{{text.altitudeText}}</h1>
-  </div>
-
-  <div class="gap"></div>
-
-  <div id="summit" class="card">
-    <p>{{text.laddersUntilSummitText}}</p>
-  </div>
-
-  <div class="gap"></div>
-
-  <div id="milestone" class="card">
-    <img v-bind:src="images.milestoneImage" id="milestoneImage" alt="Thumbnail of current milestone">
-    <div id="milestoneInfo">
-      <p>{{text.laddersUntilMilestoneText}}</p>
-      <h2>{{text.milestoneTitle}}</h2>
-      <p>{{text.milestoneInfo}}</p>
-    </div>
   </div>
 
   <div class="gap"></div>
@@ -59,6 +59,10 @@ export default {
       const info = this.vec.getCurrentAltitudeInfo()
       this.text = parseText(info)
       this.images = parseImages(info)
+      localStorage.setItem('ladderCount', JSON.stringify(info.ladderCount))
+      if (info.firstLadderDate) {
+        localStorage.setItem('firstLadderDate', JSON.stringify(info.firstLadderDate))
+      }
     }
   },
 
@@ -71,11 +75,31 @@ export default {
   },
 
   data () {
+    const resumeFromLastLadder = this.$route.query.resumeFromLastLadder
+    let resume
+    if (resumeFromLastLadder === 'true') {
+      resume = true
+    } else {
+      resume = false
+    }
+    let startNumberOfLadders = localStorage.getItem('ladderCount')
+    if (resume && startNumberOfLadders) {
+      startNumberOfLadders = JSON.parse(startNumberOfLadders)
+    } else {
+      startNumberOfLadders = 0
+    }
+    let firstLadderDate = localStorage.getItem('firstLadderDate')
+    if (resume && firstLadderDate) {
+      firstLadderDate = JSON.parse(firstLadderDate)
+    } else {
+      firstLadderDate = undefined
+    }
     const vec = new VirtualEverestClimb(
       {
         numberOfLadders: 10,
         ladderHeightInMetres: 7.3,
-        startNumberOfLadders: 0
+        startNumberOfLadders: startNumberOfLadders,
+        firstLadderDate: firstLadderDate
       }
     )
     const info = vec.getCurrentAltitudeInfo()
@@ -145,7 +169,7 @@ export default {
     float: right;
     display: inline-block;
     padding: 0;
-    margin: 15px 0 0 0;
+    margin: 0;
     background-color: white
   }
 
@@ -174,7 +198,7 @@ export default {
     float: right;
     display: inline-block;
     padding: 0;
-    margin: 0;
+    margin: 15px 0 0 0;
     background-color: white
   }
 

@@ -2,7 +2,14 @@
 
 > For when you've got a team of people climbing ladders - and you really need to pretend like they're going up Everest.
 
-### Current build is available [here](https://wmfs.github.io/virtual-everest-climb/) !
+### Live links
+
+__When starting a new attempt:__
+* https://wmfs.github.io/virtual-everest-climb/#/?resumeFromLastLadder=false
+
+__When something's gone wrong and you need to resume from the last known position:__
+* https://wmfs.github.io/virtual-everest-climb/#/?resumeFromLastLadder=true
+
 
 ## Build Setup
 

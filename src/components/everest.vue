@@ -126,8 +126,7 @@ export default {
     height: 100vh;
     background-repeat: no-repeat;
     background-size: contain;
-    transition-delay: 2s;
-    transition: background-image .5s ease-in;
+    transition: background-image 2s ease-in-out;
   }
 
   .gap {

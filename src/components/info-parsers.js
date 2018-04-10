@@ -17,7 +17,7 @@ export function parseText (info) {
 
   return {
     altitudeText: altitudeText,
-    laddersUntilSummitText: `Just ${laddersUntilSummit} more ladder${plurals(laddersUntilSummit)} to the summit!`,
+    laddersUntilSummitText: `Just ${laddersUntilSummit} ladder${plurals(laddersUntilSummit)} to Everest summit!`,
     laddersUntilMilestoneText: `We've ${info.laddersToNextMilestone} ladder${plurals(info.laddersToNextMilestone)} until`,
     milestoneTitle: info.nextMilestone.title,
     milestoneInfo: info.nextMilestone.description

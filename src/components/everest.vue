@@ -1,43 +1,42 @@
 <template>
   <div class="everest" :style="{ backgroundImage: 'url(' + images.backdrop +')'}" v-on:click="registerLadder()">
-
-    <div id="logo">
-    </div>
-
-    <div id="altitude">
-      <p>Our current altitude:</p>
-      <h1>{{text.altitudeText}}</h1>
-    </div>
-
-    <div class="gap"></div>
-
-    <div id="summit">
-      <p>{{text.laddersUntilSummitText}}</p>
-    </div>
-
-    <div class="gap"></div>
-
-    <div id="milestone">
-      <img v-bind:src="images.milestoneImage" id="milestoneImage" alt="Thumbnail of current milestone">
-      <div id="milestoneInfo">
-        <p>{{text.laddersUntilMilestoneText}}</p>
-        <h2>{{text.milestoneTitle}}</h2>
-        <p>{{text.milestoneInfo}}</p>
-      </div>
-    </div>
-
-    <div class="gap"></div>
-
-    <div id="timer">
-      <div class="duration">{{duration.seconds}}<br>
-        <p class="durationLabel">Seconds</p></div>
-      <div class="duration">{{duration.minutes}}<br>
-        <p class="durationLabel">Minutes</p></div>
-      <div class="duration">{{duration.hours}}<br>
-        <p class="durationLabel">Hours</p></div>
-    </div>
-
+  <div id="logo">
   </div>
+
+  <div id="altitude" class="card">
+    <p>Our current altitude:</p>
+    <h1>{{text.altitudeText}}</h1>
+  </div>
+
+  <div class="gap"></div>
+
+  <div id="summit" class="card">
+    <p>{{text.laddersUntilSummitText}}</p>
+  </div>
+
+  <div class="gap"></div>
+
+  <div id="milestone" class="card">
+    <img v-bind:src="images.milestoneImage" id="milestoneImage" alt="Thumbnail of current milestone">
+    <div id="milestoneInfo">
+      <p>{{text.laddersUntilMilestoneText}}</p>
+      <h2>{{text.milestoneTitle}}</h2>
+      <p>{{text.milestoneInfo}}</p>
+    </div>
+  </div>
+
+  <div class="gap"></div>
+
+  <div id="timer" class="card">
+    <div class="duration">{{duration.seconds}}<br>
+      <p class="durationLabel">Seconds</p></div>
+    <div class="duration">{{duration.minutes}}<br>
+      <p class="durationLabel">Minutes</p></div>
+    <div class="duration">{{duration.hours}}<br>
+      <p class="durationLabel">Hours</p></div>
+  </div>
+
+</div>
 </template>
 
 <script>
@@ -103,6 +102,7 @@ export default {
     height: 100vh;
     background-repeat: no-repeat;
     background-size: contain;
+    transition: background-image 1s ease-in-out;
   }
 
   .gap {
@@ -160,7 +160,7 @@ export default {
     display: inline-block;
     height: 180px;
     width: auto;
-    background-color: indianred;
+    background-color: white;
     float: left;
   }
 
@@ -200,6 +200,10 @@ export default {
     font-family: 'Jaldi', sans-serif;
     font-size: 20px;
     margin-top: -10px;
+  }
+
+  .card {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   }
 
 </style>

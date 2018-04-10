@@ -25,9 +25,13 @@ export function parseText (info) {
 }
 
 export function parseImages (info) {
+  let backdropPercentage = info.percentageComplete.toFixed(0)
+  if (backdropPercentage > 100) {
+    backdropPercentage = 100
+  }
+  const padded = backdropPercentage.padStart(3, '0')
   return {
-    // https://wmfs.github.io/virtual-everest-climb/static/backdrops/backdrop-001.png
-    backdrop: '\'./static/backdrops/backdrop-001.png\'',
+    backdrop: `'./static/backdrops/backdrop-${padded}.png'`,
     milestoneImage: `static/milestones/${info.nextMilestone.thumbnail}`
   }
 }

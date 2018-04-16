@@ -43,6 +43,13 @@
       "target": false
     },
     {
+      "thumbnail": "zeus.jpg",
+      "altitudeInMetres": 2919,
+      "title": "Mount Olympus",
+      "description": "Home of the Gods!",
+      "target": false
+    },
+    {
       "thumbnail": "mount-fuji.jpg",
       "altitudeInMetres": 3776,
       "title": "Mount Fuji",

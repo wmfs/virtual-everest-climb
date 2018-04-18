@@ -137,17 +137,17 @@ export default {
 
   @font-face {
     font-family: 'Baloo Thambi';
-    src: url(../assets/fonts/BalooThambi-Regular.ttf);
+    src: url('../assets/fonts/BalooThambi-Regular.ttf');
   }
 
   @font-face {
     font-family: 'Oxygen Mono';
-    src: url(../assets/fonts/OxygenMono-Regular.ttf);
+    src: url('../assets/fonts/BalooThambi-Regular.ttf');
   }
 
   @font-face {
     font-family: 'Jaldi';
-    src: url(../assets/fonts/Jaldi-Regular.ttf);
+    src: url('../assets/fonts/BalooThambi-Regular.ttf');
   }
 
   h1 {

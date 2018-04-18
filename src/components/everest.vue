@@ -153,14 +153,14 @@ export default {
   h1 {
     padding: 15px;
     margin: -40px 0 -40px 0;
-    font-family: 'Baloo Thambi', cursive;
+    font-family: 'Baloo Thambi', sans-serif;
     font-size: 500%;
   }
 
   h2 {
     padding: 0;
     margin: -5px 10px -5px 10px;
-    font-family: 'Baloo Thambi', cursive;
+    font-family: 'Baloo Thambi', sans-serif;
     font-size: 300%;
   }
 

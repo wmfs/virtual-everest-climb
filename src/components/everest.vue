@@ -134,6 +134,22 @@ export default {
     padding: 1em;
   }
 
+
+  @font-face {
+    font-family: 'Baloo Thambi';
+    src: url('/static/fonts/BalooThambi-Regular.ttf');
+  }
+
+  @font-face {
+    font-family: 'Oxygen Mono';
+    src: url('/static/fonts/OxygenMono-Regular.ttf');
+  }
+
+  @font-face {
+    font-family: 'Jaldi';
+    src: url('/static/fonts/Jaldi-Regular.ttf');
+  }
+
   h1 {
     padding: 15px;
     margin: -40px 0 -40px 0;

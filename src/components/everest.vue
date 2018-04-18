@@ -152,7 +152,7 @@ export default {
 
   h1 {
     padding: 15px;
-    margin: -40px 0 -40px 0;
+    margin: -40px 0 -30px 0;
     font-family: 'Baloo Thambi', sans-serif;
     font-size: 500%;
   }
@@ -185,7 +185,8 @@ export default {
     display: inline-block;
     padding: 0;
     margin: 0;
-    background-color: white
+    background-color: white;
+    border-radius: 10px 0 0 10px;
   }
 
   #summit {
@@ -193,7 +194,8 @@ export default {
     display: inline-block;
     padding: 0;
     margin: 0;
-    background-color: white
+    background-color: white;
+    border-radius: 10px 0 0 10px;
   }
 
   #milestoneImage {
@@ -214,7 +216,7 @@ export default {
     display: inline-block;
     padding: 0;
     margin: 15px 0 0 0;
-    background-color: white
+    background-color: white;
   }
 
   #timer {
@@ -226,13 +228,14 @@ export default {
     font-family: 'Oxygen Mono', monospace;
     font-size: 300%;
     height: auto;
+    border-radius: 10px 0 0 10px;
   }
 
   .duration {
     padding: 0;
     margin: 0;
     width: 100px;
-    height: 80px;
+    height: 90px;
     float: right;
   }
 

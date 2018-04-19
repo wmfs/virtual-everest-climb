@@ -7,7 +7,7 @@ export function parseText (info) {
     }
   }
 
-  const altitudeText = `${Math.ceil(info.currentAltitude).toLocaleString()}m`
+  const altitudeText = `${Math.floor(info.currentAltitude).toLocaleString()}m`
 
   let laddersUntilSummit = info.targetAltitude - info.currentAltitude
   if (laddersUntilSummit < 0) {

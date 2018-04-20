@@ -134,7 +134,6 @@ export default {
     padding: 1em;
   }
 
-
   @font-face {
     font-family: 'Baloo Thambi';
     src: url(../assets/fonts/BalooThambi-Regular.ttf) format('truetype');
